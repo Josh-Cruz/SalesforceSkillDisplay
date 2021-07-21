@@ -1,0 +1,39 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small"
+    label="Search For A Book Or Author" value={searchKey}></lightning-input>
+  <lightning-datatable key-field="Id" data={bookList} columns={bookColumns} onrowselection={getSelectedRow}
+    max-row-selection=1>
+  </lightning-datatable>
+  <template if:true={bookSelected}>
+  
+    <lightning-card class="slds-p-around_small" title="More Book Information">
+      <lightning-button  type="primary" label="Set As Preferred Book" slot="actions" onclick={setBookPreference}></lightning-button>
+      <div class="slds-p-around_small">
+        <lightning-layout horizontal-align={horizontalAlign}>
+          <lightning-layout-item  size="4" padding="around-small">
+            <div class="img">
+              <img src={bookImg} alt="">
+            </div>
+          </lightning-layout-item>
+          <lightning-layout-item  size="8" padding="around-small">
+            <lightning-record-edit-form  record-id={bookId} object-api-name="Book__c">
+              <lightning-messages></lightning-messages>
+        
+              <lightning-output-field  field-name='Name'></lightning-output-field>
+              <lightning-output-field  field-name='Author__c'></lightning-output-field>
+              <lightning-output-field  field-name='Category__c'></lightning-output-field>
+              <lightning-output-field  field-name='Inventory__c'></lightning-output-field>
+              <lightning-output-field  field-name='ISBN__c'></lightning-output-field>
+              <lightning-output-field  field-name='Notes__c'></lightning-output-field>
+            </lightning-record-edit-form>
+          </lightning-layout-item>
+          
+      </lightning-layout>
+      
+      </div>
+    </lightning-card>
+    
+  </template>
+</template>
+</template>
