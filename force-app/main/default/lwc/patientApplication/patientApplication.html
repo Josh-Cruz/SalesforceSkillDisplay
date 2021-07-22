@@ -1,17 +1,24 @@
 <template>
-  <lightning-record-edit-form object-api-name="Lead">
+  <lightning-record-edit-form object-api-name="Patient__c" onsuccess={handleSuccess} onerror={handleError}>
     <lightning-messages>
     </lightning-messages>
     <lightning-input-field field-name="Name">
     </lightning-input-field>
-    <lightning-input-field field-name="Address">
+    <lightning-input-field field-name="Street__c">
+    </lightning-input-field>
+    <lightning-input-field field-name="City__c">
+    </lightning-input-field>
+    <lightning-input-field field-name="State__c">
+    </lightning-input-field>
+    <lightning-input-field field-name="Zip_Code__c">
     </lightning-input-field>
     <lightning-input-field field-name="SSN__c">
     </lightning-input-field>
-    <lightning-input-field field-name="Date_Of_birth__c">
+    <lightning-input-field field-name="Date_Of_Birth__c">
     </lightning-input-field>
     <lightning-input-field field-name="Medical_Facility__c">
     </lightning-input-field>
+    
         <lightning-button
             class="slds-m-top_small"
             type="submit"
