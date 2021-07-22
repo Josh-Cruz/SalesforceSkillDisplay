@@ -1,4 +1,16 @@
+/* @author Josh Cruz
+* @date 07/21/21
+* @test patientApplicationControllerTest (TODO)
+* @description logic for Patient Application LWC
+*/
+
+
 public class patientApplicationController {
+    
+    /* After someone From the partner portal applys for coverage
+    We  get their info & find their medical facility then assign it to a program specialist (user)
+    then return a success message
+    */
   @AuraEnabled
   public static String updatePatientApplication(Id applicantId){
     Patient__c Applicant = [Select Id, Name,  Medical_Facility__c FROM Patient__c Where ID =:applicantId  ];
